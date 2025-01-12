@@ -10,6 +10,24 @@ div.header>div.headergrid>h1{}
 div.header>div.headergrid>ul{}
 div.header>div.headergrid>ul>li{}
 
+
+ /* 공통: 구조가 겹치는 태그들을 전체적으로 한번씩 선택해 줍니다
+  이유: 한번에 공통적으로 수정할 스타일을 위해서 */
+  div.content{}
+  div.content>div.contentgrid{}
+  div.content>div.contentgrid>div.header{}
+  div.content>div.contentgrid>div.header>h2{}
+  div.content>div.contentgrid>div.section{
+    background-color: rgb(255, 255, 255);
+  }
+  div.content>div.contentgrid>div.section div.article{background-color: #00cafcc2;}
+  div.content>div.contentgrid>div.section>div.article>img{}
+  div.content>div.contentgrid>div.section>div.article>div.texts{}
+  div.content>div.contentgrid>div.section>div.article>div.texts>h3{}
+  div.content>div.contentgrid>div.section>div.article>div.texts>h4{}
+  div.content>div.contentgrid>div.section>div.article>div.texts>p{}
+
+
 /* 컨텐츠1 */
 div.content.cnt1{}
 div.content.cnt1>div.contentgrid{}
@@ -61,3 +79,5 @@ div.content.cnt3>div.contentgrid>div.section>div.article>img{}
 div.content.cnt3>div.contentgrid>div.section>div.article>div.texts{}
 div.content.cnt3>div.contentgrid>div.section>div.article>div.texts>h3{}
 div.content.cnt3>div.contentgrid>div.section>div.article>div.texts>p{}
+
+ 
