@@ -139,15 +139,23 @@ div.cntwrap>div.content.cnt01>div.section>div.artbottom>div.article>div.texts>di
 div.cntwrap>div.content.cnt01>div.section>div.artbottom>div.article>div.texts>div.icons>i{}
 
 /* 컨텐츠2 */
-div.cntwrap>div.content.cnt02{}
+div.cntwrap>div.content.cnt02{
+    width: 100%;
+    max-width: none;
+}
 div.cntwrap>div.content.cnt02>div.header{
     background-color: #a31f30;
 }
 div.cntwrap>div.content.cnt02>div.header>h2{}
 div.cntwrap>div.content.cnt02>div.header>p{
-    height: 120px;
+    width: calc(80% / 12 * 6);
+    max-width: none;
 }
-div.cntwrap>div.content.cnt02>div.section{}
+div.cntwrap>div.content.cnt02>div.section{
+    width: 80%;
+    max-width: none;
+    margin: 0 auto;
+}
 div.cntwrap>div.content.cnt02>div.section>div.article{
     display: flex;
 }
@@ -190,7 +198,7 @@ div.cntwrap>div.content.cnt03>div.section>div.article{
 div.cntwrap>div.content.cnt03>div.section>div.article:hover>div.texts{
     margin-top: -200px;
     color: #fff;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgb(241, 8, 8);
 }
 div.cntwrap>div.content.cnt03>div.section>div.article>div.image{
     height: 200px;
