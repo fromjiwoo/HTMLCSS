@@ -56,7 +56,9 @@ div.hdrwrap>div.header>ul{
     column-gap: 10px;
     font-size: 20px;
 }
-div.hdrwrap>div.header>ul>li{}
+div.hdrwrap>div.header>ul>li:nth-of-type(4){
+    display: none;
+}
 
 /* 컨텐츠 공통 */
 div.cntwrap{
@@ -316,6 +318,9 @@ div.ftrwrap>div.footer>div.sns>i{}
 
 /* 태블릿 기준으로 1024px이 기준 */
 @media screen and (max-width:1024px){
+    div.cntwrap>div.content>div.header>p{
+        width: 100%;
+    }
     div.cntwrap {
         margin-top: 40px;
     }
@@ -350,4 +355,66 @@ div.ftrwrap>div.footer>div.sns>i{}
         row-gap: 40px;
         justify-content: space-between;
     }
+    div.ftrwrap{
+        padding-bottom: 40px;
+    }
+}
+
+/* 모바일 기준 */
+@media screen and (max-width: 500px){
+    div.cntwrap>div.content>div.header>h2{
+        line-height: 40px;
+        font-size: 25px;
+    }
+    div.hdrtopwrap>div.hdrtop, div.hdrwrap>div.header, div.cntwrap>div.content, div.ftrwrap>div.footer{
+        width: 90%;
+    }
+    div.cntwrap>div.content>div.section{
+        margin-top: 20px;
+    }
+    div.cntwrap>div.content.cnt01>div.section>div.artbottom{
+        display: none;
+    }
+    div.cntwrap > div.content.cnt01 > div.section > div.arttop > div.article:nth-of-type(2){
+        display: block;
+    }
+    div.cntwrap>div.content.cnt01>div.section>div.arttop{
+        flex-wrap: wrap;
+        column-gap: 0;
+        row-gap: 20px;
+    }
+    div.cntwrap>div.content.cnt01>div.section>div.arttop>div.article>div.texts{
+        display: none;
+    }
+    div.cntwrap>div.content.cnt01>div.section>div.arttop>div.article{
+        width: 100%;
+    }
+    div.cntwrap>div.content.cnt02>div.section{
+        margin-top: 0;
+        width: 90%;
+    }
+    div.cntwrap>div.content.cnt02>div.header{
+        padding-top: 80px;
+        padding-bottom: 80px;
+        width: 90%;
+        margin: 0 auto;
+    }
+    div.cntwrap>div.content.cnt02>div.section>div.article>div.image{
+        height: 240px;
+    }
+    div.cntwrap>div.content.cnt03>div.section>div.article{
+        width: 100%;
+    }
+    div.ftrwrap>div.footer>p{
+        height: 80px;
+        width: 100%;
+    }
+    div.hdrwrap>div.header>ul>li{
+        display: none;
+    }
+    div.hdrwrap>div.header>ul>li:nth-of-type(4){
+        display: block;
+        font-size: 30px;
+    }
+    
 }
