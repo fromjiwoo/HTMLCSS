@@ -11,9 +11,27 @@ div.hdrtopwrap>div.hdrtop{
     line-height: 40px;
     font-size: 35px;
     color: #fff;
-    text-align: center;
+    overflow: hidden;
 }
-div.hdrtopwrap>div.hdrtop>i{}
+div.hdrtopwrap>div.hdrtop>i{
+    display: block;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation:move 7s linear infinite;
+}
+
+/* 애니메이션을 만드는 애 */
+/* 작업시간이 n%일때, 어떤 css를 보여주는지를 설정할 수 있다 */
+@keyframes move {
+    /* 시작할때 */
+    0%{
+        /* 해당 선택자의 적용할 속성 */
+        margin-left: 0%;
+    }
+    /* 완료되었을때 */
+    100%{
+        margin-left: 120%;
+    }
+}
 
 /* 헤더 */
 div.hdrwrap{
@@ -30,10 +48,13 @@ div.hdrwrap>div.header{
     line-height: 80px;
     font-weight: 700;
 }
-div.hdrwrap>div.header>h1{}
+div.hdrwrap>div.header>h1{
+    font-size: 25px;
+}
 div.hdrwrap>div.header>ul{
     display: flex;
     column-gap: 10px;
+    font-size: 20px;
 }
 div.hdrwrap>div.header>ul>li{}
 
@@ -68,6 +89,9 @@ div.cntwrap>div.content>div.section{
 div.cntwrap>div.content>div.section div.article{}
 div.cntwrap>div.content>div.section div.article>div.image{
     background-color: #ccc;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 div.cntwrap>div.content>div.section div.article>div.texts{
     padding-top: 40px;
@@ -105,6 +129,12 @@ div.cntwrap>div.content.cnt01>div.section>div.arttop>div.article{}
 div.cntwrap>div.content.cnt01>div.section>div.arttop>div.article>div.image{
     height: 320px;
 }
+div.cntwrap>div.content.cnt01>div.section>div.arttop>div.article>div.image.i1{
+    background-image: url('../images/cnt1_art1.png');
+}
+div.cntwrap>div.content.cnt01>div.section>div.arttop>div.article>div.image.i2{
+    background-image: url('../images/cnt1_art2.png');
+}
 div.cntwrap>div.content.cnt01>div.section>div.arttop>div.article>div.texts{
     padding-left: calc(100% / 6 * 0.7);
     padding-right: calc(100% / 6 * 2);
@@ -125,7 +155,18 @@ div.cntwrap>div.content.cnt01>div.section>div.artbottom{
 div.cntwrap>div.content.cnt01>div.section>div.artbottom>div.article{}
 div.cntwrap>div.content.cnt01>div.section>div.artbottom>div.article>div.image{
     height: 320px;
+    
 }
+div.cntwrap>div.content.cnt01>div.section>div.artbottom>div.article>div.image.i1{
+    background-image: url(../images/artbtm_art1.png);
+}
+div.cntwrap>div.content.cnt01>div.section>div.artbottom>div.article>div.image.i2{
+    background-image: url(../images/artbtm_art2\ .png);
+}
+div.cntwrap>div.content.cnt01>div.section>div.artbottom>div.article>div.image.i3{
+    background-image: url(../images/artbtm_art3.png);
+}
+
 div.cntwrap>div.content.cnt01>div.section>div.artbottom>div.article>div.texts{
     padding-left: 23px;
     padding-right: 23px;
@@ -145,6 +186,9 @@ div.cntwrap>div.content.cnt02{
 }
 div.cntwrap>div.content.cnt02>div.header{
     background-color: #a31f30;
+    padding-top: 80px;
+    padding-bottom: 360px;
+    color: #fff;
 }
 div.cntwrap>div.content.cnt02>div.header>h2{}
 div.cntwrap>div.content.cnt02>div.header>p{
@@ -155,16 +199,25 @@ div.cntwrap>div.content.cnt02>div.section{
     width: 80%;
     max-width: none;
     margin: 0 auto;
+    margin-top: -280px;
 }
 div.cntwrap>div.content.cnt02>div.section>div.article{
     display: flex;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 div.cntwrap>div.content.cnt02>div.section>div.article>div.image{
     width: 50%;
     height: 440px;
+    overflow: hidden;
+}
+div.cntwrap>div.content.cnt02>div.section>div.article>div.image>video{
+    height: 100%;
 }
 div.cntwrap>div.content.cnt02>div.section>div.article>div.texts{
     width: 50%;
+    background-color: #fff;
+    padding: 80px calc(100% /12);
+    text-align: center;
 }
 div.cntwrap>div.content.cnt02>div.section>div.article>div.texts>h3{}
 div.cntwrap>div.content.cnt02>div.section>div.article>div.texts>h4{}
@@ -177,10 +230,14 @@ div.cntwrap>div.content.cnt02>div.section>div.article>div.texts>div.button{
     color: #fff;
     text-align: center;
     text-transform: uppercase;
-    width: calc(100% / 6 * 4);
+    width:calc(100% - 40px);
     margin: 0 auto;
     border-radius: 20px;
     cursor: pointer;
+    margin-top: 20px;
+}
+div.cntwrap>div.content.cnt02>div.section>div.article>div.texts>div.button:hover{
+    background-color: #00e1ff;
 }
 
 /* 컨텐츠3 */
@@ -198,28 +255,99 @@ div.cntwrap>div.content.cnt03>div.section>div.article{
 div.cntwrap>div.content.cnt03>div.section>div.article:hover>div.texts{
     margin-top: -200px;
     color: #fff;
-    background-color: rgb(241, 8, 8);
+    background-color: rgb(0, 0, 0);
 }
 div.cntwrap>div.content.cnt03>div.section>div.article>div.image{
     height: 200px;
 }
+div.cntwrap>div.content.cnt03>div.section>div.article>div.image.i1{
+    background-image: url(../images/art3_img1.png);
+}
+div.cntwrap>div.content.cnt03>div.section>div.article>div.image.i2{
+    background-image: url(../images/art3_img2.png);
+}
+div.cntwrap>div.content.cnt03>div.section>div.article>div.image.i3{
+    background-image: url(../images/art3_img3.png);
+}
+div.cntwrap>div.content.cnt03>div.section>div.article>div.image.i4{
+    background-image: url(../images/art3-img4.png);
+}
 div.cntwrap>div.content.cnt03>div.section>div.article>div.texts{
-    transition: all 3s;
+    transition: all 1s;
     background-color: rgba(0, 0, 0, 0);
     color: #000;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 div.cntwrap>div.content.cnt03>div.section>div.article>div.texts>h3{}
 
 /* 푸터 */
 div.ftrwrap{
     background-color: #a31f30;
+    margin-top: 80px;
+    padding-top: 40px;
+    padding-bottom: 80px;
 }
 div.ftrwrap>div.footer{
     width: 80%;
     max-width: 1080PX;
     margin: 0 auto;
+    text-align: center;
+    color: #fff;
 }
-div.ftrwrap>div.footer>h4{}
-div.ftrwrap>div.footer>p{}
-div.ftrwrap>div.footer>div.sns{}
+div.ftrwrap>div.footer>h4{
+    line-height: 80px;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+div.ftrwrap>div.footer>p{
+    width: calc(100 / 12 * 8);
+    margin: 0 auto;
+    height: 40px;
+    line-height: 20px;
+    overflow: hidden;
+}
+div.ftrwrap>div.footer>div.sns{
+    line-height: 80px;
+    font-size: 45px;
+}
 div.ftrwrap>div.footer>div.sns>i{}
+
+/* 태블릿 기준으로 1024px이 기준 */
+@media screen and (max-width:1024px){
+    div.cntwrap {
+        margin-top: 40px;
+    }
+    div.cntwrap > div.content.cnt01 > div.section > div.arttop > div.article:nth-of-type(2){
+        display: none;
+    }
+    div.cntwrap>div.content.cnt01>div.section>div.artbottom>div.article:nth-last-of-type(3){
+        display: none;
+    }
+    div.cntwrap>div.content.cnt01>div.section>div.artbottom{
+        margin-top: 0;
+    }
+    div.cntwrap>div.content.cnt02>div.section>div.article>div.texts{
+        display: none;
+    }
+    div.cntwrap>div.content.cnt02>div.section>div.article>div.image{
+        width: 100%;
+    }
+    div.cntwrap>div.content.cnt02>div.header>p{
+        width: 80%;
+        min-width: none;
+    }
+    div.cntwrap>div.content.cnt03>div.header{
+        display: none;
+    }
+    div.cntwrap>div.content.cnt03>div.section>div.article{
+        width: calc(50% - 10px);
+    }
+    div.cntwrap>div.content.cnt03>div.section{
+        /* 다음줄로 넘길때 fle : wrap을 씁니다  */
+        flex-wrap: wrap;
+        row-gap: 40px;
+        justify-content: space-between;
+    }
+}
